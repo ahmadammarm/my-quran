@@ -29,7 +29,7 @@ const SurahList: React.FC<Surah> = () => {
 
 
   return (
-    <div>
+    <div className="mt-24">
         {surah.map((item) => (
             <div key={item.nomor}>
                 <p>{item.nomor}</p>

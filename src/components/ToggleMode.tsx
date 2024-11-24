@@ -14,7 +14,7 @@ export function ToggleMode() {
       onClick={() => {
         setTheme(theme === "light" ? "dark" : "light")
       }}
-      className="rounded-full w-12 h-12 lg:w-14 lg:h-14"
+      className="rounded-full w-12 h-12 bg-green-900 dark:bg-green-100 hover:opacity-85"
     >
       {theme === "light" ? (
         <>
@@ -22,7 +22,7 @@ export function ToggleMode() {
         </>
       ) : (
         <>
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 border-gray-900" />
+          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 border-gray-900 dark:text-green-950" />
         </>
       )}
     </Button>

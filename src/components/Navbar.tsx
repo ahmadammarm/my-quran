@@ -1,9 +1,9 @@
-
-// @ts-nocheck
 "use client";
 
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
+import { Button } from "./ui/button";
+import { ToggleMode } from "./ToggleMode";
 
 const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -20,34 +20,36 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-primary shadow-sm fixed top-0 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-bold text-blue-500">
-              MyWebsite
+            <a href="/" className="text-2xl font-bold text-black">
+              MyQuran
             </a>
           </div>
-          <div className="hidden md:flex space-x-6">
+
+          <div className="hidden md:flex items-center space-x-6">
             {NavLinks.map((item) => (
               <a
                 key={item.title}
                 href={item.url}
-                className={`text-lg ${
+                className={`px-4 py-2 text-lg ${
                   pathname === item.url
-                    ? "text-blue-500"
-                    : "text-gray-500 hover:text-blue-500"
+                    ? "text-green-800 bg-gray-100 rounded-[10%]"
+                    : "text-black"
                 }`}
               >
                 {item.title}
               </a>
             ))}
+            <ToggleMode />
           </div>
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
+
+          <div className="flex items-center space-x-4 md:hidden">
             <Button
               onClick={handleToggle}
-              className="text-gray-500 hover:text-blue-500 focus:outline-none"
+              className="text-black hover:text-white focus:outline-none"
               aria-label="Toggle navigation"
             >
               <svg
@@ -68,24 +70,25 @@ const Navbar = () => {
                   }
                 />
               </svg>
-            </button>
+            </Button>
+            <ToggleMode />
           </div>
         </div>
       </div>
-      {/* Mobile Menu */}
+
       {isMobileOpen && (
-        <div className="md:hidden bg-white shadow-md">
+        <div className="md:hidden bg-gray-100 dark:bg-green-900 shadow-md">
           <ul className="space-y-4 p-4">
             {NavLinks.map((item) => (
               <li key={item.title}>
                 <a
                   href={item.url}
-                  className={`block text-lg ${
+                  className={`block text-lg font-semibold px-4 py-2 ${
                     pathname === item.url
-                      ? "text-blue-500"
-                      : "text-gray-500 hover:text-blue-500"
+                      ? "dark:text-green-900 text-green-950 bg-green-300 px-4 py-2"
+                      : "text-black dark:text-white"
                   }`}
-                  onClick={() => setIsMobileOpen(false)} // Close menu on click
+                  onClick={() => setIsMobileOpen(false)}
                 >
                   {item.title}
                 </a>

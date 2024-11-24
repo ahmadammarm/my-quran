@@ -1,10 +1,12 @@
+import Navbar from "@/components/Navbar";
 import SurahList from "@/components/SurahList";
 
 
 export default function Home() {
   return (
     <div>
-        <SurahList nomor={""} nama="" namaLatin="" arti="" />
+      <Navbar />
+        <SurahList nomor={""} nama="" namaLatin="" arti=""  />
     </div>
   );
 }
