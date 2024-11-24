@@ -16,12 +16,12 @@ export const NavigationButtons: React.FC<NavigationButtonsProps> = ({
         <div className="flex justify-between container mx-auto mb-9 px-11">
             {previousNomor && (
                 <Link href={`/surah/${previousNomor}`}>
-                    <Button>Surat Sebelumnya</Button>
+                    <Button className="rounded-xl">Surat Sebelumnya</Button>
                 </Link>
             )}
             {nextNomor && (
                 <Link href={`/surah/${nextNomor}`}>
-                    <Button>Surat Selanjutnya</Button>
+                    <Button className="rounded-xl">Surat Selanjutnya</Button>
                 </Link>
             )}
         </div>

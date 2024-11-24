@@ -7,6 +7,7 @@ import { SurahDetail } from '@/services/SurahService';
 import { SurahHeader } from './SurahHeader';
 import { AyahCard } from './AyahCard';
 import { NavigationButtons } from './NavigationButtons';
+import Loading from '../Loading';
 
 interface SurahDetailViewProps {
     surah: SurahDetail;
@@ -15,6 +16,17 @@ interface SurahDetailViewProps {
 export const SurahDetailView: React.FC<SurahDetailViewProps> = ({ surah }) => {
     const [selectedQori, setSelectedQori] = useState("01");
     const [currentlyPlaying, setCurrentlyPlaying] = useState<number | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
+
+    setTimeout(() => {
+        setIsLoading(false);
+    }, 2000);
+
+    if(isLoading) {
+        return (
+            <Loading />
+        )
+    }
 
     const handleAudioEnd = () => {
         setCurrentlyPlaying(null);
@@ -28,7 +40,7 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({ surah }) => {
         <>
             <div className="container mx-auto mt-24 px-4 py-4">
                 <Link href="/">
-                    <Button className="mb-5">Kembali ke menu utama</Button>
+                    <Button className="mb-5 rounded-xl">Kembali ke menu utama</Button>
                 </Link>
                 <div className="bg-transparent">
                     <SurahHeader

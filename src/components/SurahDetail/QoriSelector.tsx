@@ -18,7 +18,7 @@ interface QoriSelectorProps {
 export const QoriSelector: React.FC<QoriSelectorProps> = ({ selectedQori, onQoriChange }) => {
     return (
         <Select value={selectedQori} onValueChange={onQoriChange}>
-            <SelectTrigger className="w-[300px]">
+            <SelectTrigger className="w-[300px] border border-green-950 dark:border-white rounded-xl">
                 <SelectValue placeholder="Pilih Qori" />
             </SelectTrigger>
             <SelectContent>

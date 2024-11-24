@@ -11,15 +11,15 @@ interface AyahCardProps {
 
 export const AyahCard: React.FC<AyahCardProps> = ({ ayah, selectedQori, onAudioEnd }) => {
     return (
-        <div className="p-4 border rounded-lg shadow-sm">
-            <div className="flex justify-between items-center mb-2">
+        <div className="p-4 border rounded-xl shadow-sm dark:shadow-white">
+            <div className="flex justify-between items-center mb-10">
                 <h5 className="text-base font-medium pr-5 rounded-lg border-gray-100">
-                    {ayah.nomorAyat}
+                    {ayah.nomorAyat}.
                 </h5>
-                <p className="text-xl text-right">{ayah.teksArab}</p>
+                <p className="text-2xl text-right md:text-3xl font-semibold tracking-wide">{ayah.teksArab}</p>
             </div>
             <div dangerouslySetInnerHTML={{ __html: ayah.teksLatin }} className="italic font-bold" />
-            <div className="mb-2">Arti: {ayah.teksIndonesia}</div>
+            <div className="mb-5">Arti : {ayah.teksIndonesia}</div>
             <AudioPlayer
                 src={ayah.audio[selectedQori]}
                 onEnded={onAudioEnd}
