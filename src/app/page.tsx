@@ -1,12 +1,27 @@
-import Navbar from "@/components/Navbar";
-import SurahList from "@/components/SurahList";
+"use client"
+
+import HomeSurah from "@/components/HomeSurah";
+import Loading from "@/components/Loading";
+import { useState } from "react";
 
 
 export default function Home() {
-  return (
-    <div>
-      <Navbar />
-        <SurahList nomor={""} nama="" namaLatin="" arti=""  />
-    </div>
-  );
+
+    const [isLoading, setIsLoading] = useState(true);
+
+    setTimeout(() => {
+        setIsLoading(false);
+    }, 2000);
+
+    if (isLoading) {
+        return (
+            <Loading />
+        )
+    }
+
+    return (
+        <div>
+            <HomeSurah nomor={""} nama="" namaLatin="" arti="" jumlahAyat={""} />
+        </div>
+    );
 }

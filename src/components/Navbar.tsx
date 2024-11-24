@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { ToggleMode } from "./ToggleMode";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -47,31 +48,18 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center space-x-4 md:hidden">
+            <ToggleMode />
             <Button
               onClick={handleToggle}
               className="text-black hover:text-white focus:outline-none"
               aria-label="Toggle navigation"
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d={
-                    isMobileOpen
-                      ? "M6 18L18 6M6 6l12 12"
-                      : "M4 6h16M4 12h16M4 18h16"
-                  }
-                />
-              </svg>
+              {isMobileOpen ? (
+                <X className="w-6 h-6" /> // Gunakan ikon X untuk menutup
+              ) : (
+                <Menu className="w-6 h-6" /> // Gunakan ikon Menu untuk membuka
+              )}
             </Button>
-            <ToggleMode />
           </div>
         </div>
       </div>
