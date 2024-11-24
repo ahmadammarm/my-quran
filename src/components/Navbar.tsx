@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { ToggleMode } from "./ToggleMode";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -21,18 +22,18 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-primary shadow-sm fixed top-0 w-full">
+    <nav className="bg-primary shadow-sm fixed top-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-bold text-black">
+            <Link href="/" className="text-2xl font-bold text-black">
               MyQuran
-            </a>
+            </Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-6">
             {NavLinks.map((item) => (
-              <a
+              <Link
                 key={item.title}
                 href={item.url}
                 className={`px-4 py-2 text-lg ${
@@ -42,7 +43,7 @@ const Navbar = () => {
                 }`}
               >
                 {item.title}
-              </a>
+              </Link>
             ))}
             <ToggleMode />
           </div>
@@ -55,9 +56,9 @@ const Navbar = () => {
               aria-label="Toggle navigation"
             >
               {isMobileOpen ? (
-                <X className="w-6 h-6" /> // Gunakan ikon X untuk menutup
+                <X className="w-6 h-6" />
               ) : (
-                <Menu className="w-6 h-6" /> // Gunakan ikon Menu untuk membuka
+                <Menu className="w-6 h-6" />
               )}
             </Button>
           </div>
@@ -69,7 +70,7 @@ const Navbar = () => {
           <ul className="space-y-4 p-4">
             {NavLinks.map((item) => (
               <li key={item.title}>
-                <a
+                <Link
                   href={item.url}
                   className={`block text-lg font-semibold px-4 py-2 ${
                     pathname === item.url
@@ -79,7 +80,7 @@ const Navbar = () => {
                   onClick={() => setIsMobileOpen(false)}
                 >
                   {item.title}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

@@ -39,7 +39,7 @@ const SurahList: React.FC<Surah> = () => {
 
     return (
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-4 px-4 py-5">
-            {surah.map((item) => ( 
+            {surah.map((item) => (
                 <div key={item.nomor}>
                     <Link href={`/surah/${item.nomor}`}>
                         <Card className="bg-green-300 dark:bg-green-900 text-green-900 dark:text-green-300">
