@@ -18,9 +18,10 @@ export default function About() {
     }
 
     return (
-        <div className="mt-24">
-            <h1>About</h1>
-            <p>This is about page</p>
+        <div className="flex justify-center items-center min-h-screen">
+            <h1 className="font-bold text-xl">
+                Halaman ini masih dalam tahap pengembangan
+            </h1>
         </div>
     );
 }

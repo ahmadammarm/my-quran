@@ -40,7 +40,7 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({ surah }) => {
         <>
             <div className="container mx-auto mt-24 px-4 py-4">
                 <Link href="/">
-                    <Button className="mb-5 rounded-xl">Kembali ke menu utama</Button>
+                    <Button className="mb-10 rounded-xl">Kembali ke menu utama</Button>
                 </Link>
                 <div className="bg-transparent">
                     <SurahHeader

@@ -22,7 +22,8 @@ export default function Surah() {
 
     return (
         <div className= "mt-16 px-4">
-           <SurahList nomor={''} nama={''} namaLatin={''} arti={''} jumlahAyat={''} />
+            
+           {/* <SurahList nomor={''} nama={''} namaLatin={''} arti={''} jumlahAyat={''} /> */}
         </div>
     )
 }

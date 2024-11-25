@@ -12,10 +12,18 @@ const Navbar = () => {
   const pathname = usePathname();
 
   const NavLinks = [
-    { title: "Home", url: "/" },
-    { title: "About", url: "/about" },
-    { title: "Surah", url: "/surah" },
+    { title: "Al-Quran", url: "/" },
+    { title: "Al-Hadits", url: "/al-hadits" },
   ];
+
+  const isActiveLink = (url: string) => {
+    
+    if (pathname === url) return true;
+
+    if (url === "/" && pathname.startsWith("/surah/")) return true;
+
+    return false;
+  };
 
   const handleToggle = () => {
     setIsMobileOpen(!isMobileOpen);
@@ -37,7 +45,7 @@ const Navbar = () => {
                 key={item.title}
                 href={item.url}
                 className={`px-4 py-2 text-lg ${
-                  pathname === item.url
+                  isActiveLink(item.url)
                     ? "text-green-800 bg-gray-100 rounded-[10%]"
                     : "text-black"
                 }`}
@@ -73,7 +81,7 @@ const Navbar = () => {
                 <Link
                   href={item.url}
                   className={`block text-lg font-semibold px-4 py-2 ${
-                    pathname === item.url
+                    isActiveLink(item.url)
                       ? "dark:text-green-900 text-green-950 bg-green-300 px-4 py-2"
                       : "text-black dark:text-white"
                   }`}

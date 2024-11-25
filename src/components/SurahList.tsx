@@ -1,67 +1,80 @@
-"use client"
+"use client";
 
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
 import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card"
-import Link from 'next/link'
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import Link from "next/link";
 
 interface Surah {
-    nomor: string,
-    nama: string,
-    namaLatin: string,
-    arti: string,
-    jumlahAyat: string,
+  nomor: string;
+  nama: string;
+  namaLatin: string;
+  arti: string;
+  jumlahAyat: string;
 }
 
-const SurahList: React.FC<Surah> = () => {
+interface SurahListProps {
+  searchQuery: string; // Kata kunci pencarian
+}
 
-    const [surah, setSurah] = React.useState<Surah[]>([]);
+const SurahList: React.FC<SurahListProps> = ({ searchQuery }) => {
+  const [surah, setSurah] = React.useState<Surah[]>([]);
 
-    const fetchData = async () => {
-        try {
-            const response = await fetch('https://equran.id/api/v2/surat');
-            const data = await response.json();
-            setSurah(data.data);
-        } catch (error) {
-            console.log(error);
-        }
+  const fetchData = async () => {
+    try {
+      const response = await fetch("https://equran.id/api/v2/surat");
+      const data = await response.json();
+      setSurah(data.data);
+    } catch (error) {
+      console.log(error);
     }
+  };
 
-    useEffect(() => {
-        fetchData();
-    }, [])
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-    return (
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-4 px-4 py-5">
-            {surah.map((item) => (
-                <div key={item.nomor}>
-                    <Link href={`/surah/${item.nomor}`}>
-                        <Card className="bg-green-300 dark:bg-green-900 text-green-900 dark:text-green-300">
-                            <CardHeader>
-                                <div className="flex justify-between items-center mb-5">
-                                    <CardTitle className="text-xl md:text-2xl bg-green-50 shadow-md rounded-xl p-3 dark:text-green-900">{item.nomor}</CardTitle>
-                                    <CardTitle className="text-2xl md:text-3xl">{item.nama}</CardTitle>
-                                </div>
-                                <CardDescription className="text-black dark:text-white text-xl md:text-2xl font-bold">{item.namaLatin}</CardDescription>
-                            </CardHeader>
-                            <CardContent>
-                                <p className='text-lg italic font-mono font-semibold'>{item.arti}</p>
-                            </CardContent>
-                            <CardFooter>
-                                <p className="font-bold">Jumlah ayat : {item.jumlahAyat}</p>
-                            </CardFooter>
-                        </Card>
-                    </Link>
+  const filteredSurah = surah.filter(
+    (item) =>
+      item.nama.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.namaLatin.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  return (
+    <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 px-4 py-5">
+      {filteredSurah.map((item) => (
+        <div key={item.nomor}>
+          <Link href={`/surah/${item.nomor}`}>
+            <Card className="bg-green-300 dark:bg-green-900 text-green-900 dark:text-green-300">
+              <CardHeader>
+                <div className="flex justify-between items-center mb-5">
+                  <CardTitle className="text-xl md:text-2xl bg-green-50 shadow-md rounded-xl p-3 dark:text-green-900">
+                    {item.nomor}
+                  </CardTitle>
+                  <CardTitle className="text-2xl md:text-3xl">{item.nama}</CardTitle>
                 </div>
-            ))}
+                <CardDescription className="text-black dark:text-white text-xl md:text-2xl font-bold">
+                  {item.namaLatin}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg italic font-mono font-semibold">{item.arti}</p>
+              </CardContent>
+              <CardFooter>
+                <p className="font-bold">Jumlah ayat : {item.jumlahAyat} ayat</p>
+              </CardFooter>
+            </Card>
+          </Link>
         </div>
-    )
-}
+      ))}
+    </div>
+  );
+};
 
-export default SurahList
+export default SurahList;
