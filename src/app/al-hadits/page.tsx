@@ -19,7 +19,7 @@ export default function About() {
 
     return (
         <div className="flex justify-center items-center min-h-screen">
-            <h1 className="font-bold text-xl">
+            <h1 className="font-bold text-xl text-center">
                 Halaman ini masih dalam tahap pengembangan
             </h1>
         </div>
