@@ -52,7 +52,7 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({ surah }) => {
                 </div>
             </div>
 
-            <div className="mt-6 container mb-9 px-11">
+            <div className="mt-6 container mb-9 px-5">
                 <h3 className="text-2xl font-semibold mb-4">
                     {surah.namaLatin} ({surah.nama})
                 </h3>
