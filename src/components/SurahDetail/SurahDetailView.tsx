@@ -15,7 +15,7 @@ interface SurahDetailViewProps {
 
 export const SurahDetailView: React.FC<SurahDetailViewProps> = ({ surah }) => {
     const [selectedQori, setSelectedQori] = useState("01");
-    const [currentlyPlaying, setCurrentlyPlaying] = useState<number | null>(null);
+    const [, setCurrentlyPlaying] = useState<number | null>(null);
     const [isLoading, setIsLoading] = useState(true);
 
     setTimeout(() => {

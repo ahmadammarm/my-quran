@@ -20,7 +20,7 @@ interface Surah {
 }
 
 interface SurahListProps {
-  searchQuery: string; // Kata kunci pencarian
+  searchQuery: string; 
 }
 
 const SurahList: React.FC<SurahListProps> = ({ searchQuery }) => {
