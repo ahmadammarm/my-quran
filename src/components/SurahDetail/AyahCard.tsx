@@ -19,7 +19,7 @@ export const AyahCard: React.FC<AyahCardProps> = ({ ayah, selectedQori, onAudioE
                 <p className="text-2xl text-right md:text-3xl font-semibold tracking-wide">{ayah.teksArab}</p>
             </div>
             <div dangerouslySetInnerHTML={{ __html: ayah.teksLatin }} className="italic font-bold mb-5" />
-            <div className="mb-5">Arti : {ayah.teksIndonesia}</div>
+            <div className="mb-5">Artinya  : &quot;{ayah.teksIndonesia}&quot;</div>
             <AudioPlayer
                 src={ayah.audio[selectedQori]}
                 onEnded={onAudioEnd}
