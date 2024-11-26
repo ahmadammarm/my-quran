@@ -1,11 +1,14 @@
 "use client";
 
+import HaditsList from "@/components/HaditsList";
 import Loading from "@/components/Loading";
+import SearchHaditsInput from "@/components/SearchHaditsInput";
 import { useState } from "react";
 
 export default function About() {
 
     const [isLoading, setIsLoading] = useState(true);
+    const [searchQuery, setSearchQuery] = useState("");
 
     setTimeout(() => {
         setIsLoading(false);
@@ -18,10 +21,11 @@ export default function About() {
     }
 
     return (
-        <div className="flex justify-center items-center min-h-screen">
-            <h1 className="font-bold text-xl text-center">
-                Halaman ini masih dalam tahap pengembangan
-            </h1>
+        <div className="px-5">
+            <SearchHaditsInput onSearch={(query) => setSearchQuery(query)} />
+            <HaditsList
+                searchQuery={searchQuery}
+             />
         </div>
     );
 }

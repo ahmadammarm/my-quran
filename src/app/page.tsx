@@ -2,6 +2,7 @@
 
 import Loading from "@/components/Loading";
 import SearchInput from "@/components/SearchInput";
+import SourceButton from "@/components/SourceButton";
 import SurahList from "@/components/SurahList";
 import { useState } from "react";
 
@@ -25,6 +26,7 @@ export default function Home() {
         <p className="text-center mt-2 text-md md:text-lg">
             Mari Membaca Al-Qur&#39;an beserta terjemahannya
         </p>
+        <SourceButton />
       <SearchInput onSearch={(query) => setSearchQuery(query)} />
       <SurahList searchQuery={searchQuery} />
     </div>
