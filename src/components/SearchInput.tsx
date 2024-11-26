@@ -22,7 +22,7 @@ const SearchInput: React.FC<SearchInputProps> = ({ onSearch }) => {
   };
 
   return (
-    <div className="flex items-center justify-center mt-28">
+    <div className="flex items-center justify-center mt-5">
       <SearchIcon className="mr-5" />
       <Input
         placeholder="Cari Surah"

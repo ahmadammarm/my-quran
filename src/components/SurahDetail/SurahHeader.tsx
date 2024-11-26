@@ -29,16 +29,15 @@ export const SurahHeader: React.FC<SurahHeaderProps> = ({
             />
 
             <div className="space-y-4">
+                <p className="font-bold mt-10">
+                    Pilih Qori:
+                </p>
                 <div className="flex items-center space-x-4">
-                    <p className="font-bold">
-                        Pilih Qori:
-                    </p>
                     <QoriSelector
                         selectedQori={selectedQori}
                         onQoriChange={onQoriChange}
                     />
                 </div>
-
                 <div>
                     <AudioPlayer
                         src={surah.audioFull[selectedQori]}

@@ -19,6 +19,12 @@ export default function Home() {
 
   return (
     <div>
+        <h1 className="text-center mt-24 text-xl md:text-2xl font-bold">
+            Al-Qur&#39;an Al-Karim
+        </h1>
+        <p className="text-center mt-2 text-md md:text-lg">
+            Mari Membaca Al-Qur&#39;an beserta terjemahannya
+        </p>
       <SearchInput onSearch={(query) => setSearchQuery(query)} />
       <SurahList searchQuery={searchQuery} />
     </div>
