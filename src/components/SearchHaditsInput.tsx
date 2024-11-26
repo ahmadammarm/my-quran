@@ -25,7 +25,7 @@ const SearchHaditsInput: React.FC<SearchHaditsInputProps> = ({ onSearch }) => {
     <div className="flex items-center justify-center mt-20">
       <SearchIcon className="mr-5" />
       <Input
-        placeholder="Cari Surah"
+        placeholder="Cari Hadits"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={handleKeyDown}

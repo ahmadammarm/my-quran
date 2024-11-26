@@ -2,7 +2,6 @@ import Link from 'next/link'
 import React from 'react'
 import { Button } from './ui/button'
 import { GithubIcon } from 'lucide-react'
-import { Separator } from './ui/separator'
 
 const SourceButton = () => {
 
