@@ -3,7 +3,6 @@
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { Button } from "./ui/button";
-import { ToggleMode } from "./ToggleMode";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 
@@ -14,10 +13,11 @@ const Navbar = () => {
   const NavLinks = [
     { title: "Al-Quran", url: "/" },
     { title: "Al-Hadits", url: "/al-hadits" },
+    { title: "Doa Harian", url: "/doa-harian" },
   ];
 
   const isActiveLink = (url: string) => {
-    
+
     if (pathname === url) return true;
 
     if (url === "/" && pathname.startsWith("/surah/")) return true;
@@ -53,11 +53,9 @@ const Navbar = () => {
                 {item.title}
               </Link>
             ))}
-            <ToggleMode />
           </div>
 
           <div className="flex items-center space-x-4 md:hidden">
-            <ToggleMode />
             <Button
               onClick={handleToggle}
               className="text-black hover:text-white focus:outline-none"

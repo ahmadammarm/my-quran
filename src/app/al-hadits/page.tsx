@@ -5,7 +5,7 @@ import Loading from "@/components/Loading";
 import SearchHaditsInput from "@/components/SearchHaditsInput";
 import { useState } from "react";
 
-export default function About() {
+export default function Page() {
 
     const [isLoading, setIsLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState("");
