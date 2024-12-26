@@ -24,7 +24,7 @@ const AsmaulHusnaList: FC<AsmaulHusnaSearchProps> = ({
         try {
             const response = await fetch("https://asmaul-husna-api.vercel.app/api/all")
             const data = await response.json()
-            const result = data.data.map((item: any) => {
+            const result = data.data.map((item: { urutan: string; latin: string; arab: string; arti: string }) => {
                 return {
                     id: item.urutan,
                     nama: item.latin,
