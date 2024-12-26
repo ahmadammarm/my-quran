@@ -69,7 +69,7 @@ const SurahList: React.FC<SurahListProps> = ({ searchQuery }) => {
                 {filteredSurah.map((item) => (
                     <div key={item.nomor}>
                         <Link href={`/surah/${item.nomor}`}>
-                            <Card className="bg-green-300 dark:bg-green-900 text-green-900 dark:text-green-300">
+                            <Card className="bg-green-300 text-green-900">
                                 <CardHeader>
                                     <div className="flex justify-between items-center mb-5">
                                         <CardTitle className="text-xl md:text-2xl bg-green-50 shadow-md rounded-xl p-3 dark:text-green-900">

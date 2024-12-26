@@ -16,8 +16,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-    title: "My Quran",
-    description: "A simple Quran app",
+    title: "Mouslemify - Lets Learn About Islam",
+    description: "Mouslemify is a website that provides Islamic content such as the Quran, Hadith, and Islamic prayers.",
 };
 
 export default function RootLayout({

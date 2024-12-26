@@ -14,6 +14,7 @@ const Navbar = () => {
     { title: "Al-Quran", url: "/" },
     { title: "Al-Hadits", url: "/al-hadits" },
     { title: "Doa Harian", url: "/doa-harian" },
+    { title: "Asmaul Husna", url: "/asmaul-husna" }
   ];
 
   const isActiveLink = (url: string) => {
@@ -35,7 +36,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="text-2xl font-bold text-black">
-              MyQuran
+              Mouslemify
             </Link>
           </div>
 
