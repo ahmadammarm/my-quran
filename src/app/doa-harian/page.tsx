@@ -5,10 +5,22 @@ import DoaList from "@/components/DoaList";
 import SearchDoaInput from "@/components/SearchDoaInput";
 import SourceDoaButton from "@/components/SourceDoaButton";
 import { useState } from "react";
+import Loading from "@/components/Loading";
 
 export default function Page() {
 
-    const [searchQuery, setSearchQuery] = useState("")
+    const [searchQuery, setSearchQuery] = useState("");
+    const [isLoading, setIsLoading] = useState(true);
+
+    setTimeout(() => {
+        setIsLoading(false)
+    }, 2000)
+
+    if(isLoading) {
+        return (
+            <Loading />
+        )
+    }
 
     return (
         <div className="mt-24">
