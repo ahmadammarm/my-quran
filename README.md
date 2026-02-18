@@ -169,22 +169,6 @@ my-quran/
 | `npm run start` | Start production server |
 | `npm run lint` | Run ESLint |
 
-## Screenshots
-
-### Home Page (Al-Quran)
-Displays all 114 Surahs with search functionality.
-
-### Surah Detail
-Shows individual Surah with Arabic text, transliteration, translation, and audio player.
-
-### Al-Hadits
-Lists available hadith books with search functionality.
-
-### Doa Harian
-Daily prayers collection with Arabic, Latin, and Indonesian translation.
-
-### Asmaul Husna
-99 Names of Allah with Arabic, Latin, and meaning.
 
 ## Features in Detail
 
