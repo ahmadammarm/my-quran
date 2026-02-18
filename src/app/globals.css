@@ -14,41 +14,38 @@ body {
 
 @layer base {
     :root {
-      /* Name: custom color palette
-         Author: Ilias Ism
-         URL: https://gradient.page */
+      /* Elegant Green & White Theme */
 
-      /* CSS: .bg-gradient { background: var(--gradient) } */
-      --gradient: #16a34a;
+      --background: 0 0% 100%;
+      --foreground: 142 76% 20%;
 
-      --background: 151 49.4% 2.88%;
-      --foreground: 151 7.6% 96.8%;
+      --muted: 142 30% 95%;
+      --muted-foreground: 142 20% 45%;
 
-      --muted: 151 38% 10.799999999999999%;
-      --muted-foreground: 151 7.6% 53.6%;
+      --popover: 0 0% 100%;
+      --popover-foreground: 142 76% 20%;
 
-      --popover: 151 49.8% 4.68%;
-      --popover-foreground: 151 7.6% 96.8%;
+      --card: 0 0% 100%;
+      --card-foreground: 142 76% 20%;
 
-      --card: 151 49.8% 4.68%;
-      --card-foreground: 151 7.6% 96.8%;
+      --border: 142 30% 85%;
+      --input: 142 30% 85%;
 
-      --border: 151 38% 10.799999999999999%;
-      --input: 151 38% 10.799999999999999%;
+      --primary: 142 76% 36%;
+      --primary-foreground: 0 0% 100%;
 
-      --primary: 151 76% 36%;
-      --primary-foreground: 151 7.6% 96.8%;
+      --secondary: 142 50% 92%;
+      --secondary-foreground: 142 76% 25%;
 
-      --secondary: 151 38% 10.799999999999999%;
-      --secondary-foreground: 151 7.6% 96.8%;
-
-      --accent: 151 38% 10.799999999999999%;
-      --accent-foreground: 151 7.6% 96.8%;
+      --accent: 142 50% 88%;
+      --accent-foreground: 142 76% 20%;
 
       --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 151 7.6% 96.8%;
+      --destructive-foreground: 0 0% 100%;
 
-      --ring: 151 76% 36%;
+      --ring: 142 76% 36%;
+
+      --radius: 0.75rem;
     }
   }
 
@@ -59,4 +56,29 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom scrollbar for elegance */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22c55e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #16a34a;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }

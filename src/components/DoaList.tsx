@@ -1,7 +1,7 @@
 "use client"
 
 import { FC, useEffect, useState } from "react"
-import { Card, CardContent,  CardTitle } from "./ui/card"
+import { Card, CardContent, CardTitle } from "./ui/card"
 
 interface DoaProps {
     id: string,
@@ -27,7 +27,7 @@ const DoaList: FC<DoaSearchProps> = ({
             const data = await response.json()
             console.log(data)
             setDoa(data)
-        } catch(error) {
+        } catch (error) {
             console.log(error)
         }
     }
@@ -45,13 +45,13 @@ const DoaList: FC<DoaSearchProps> = ({
     return (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 mt-10">
             {filteredDoa.map((item, index) => (
-                <Card key={index} className="bg-green-300">
-                    <CardTitle className="text-center text-green-900 mt-5 text-2xl md:text-3xl">
-                            {item.judul}
-                        </CardTitle>
+                <Card key={index} className="bg-white border-2 border-green-100 hover:border-green-400 hover:shadow-xl hover:shadow-green-100 transition-all duration-300 cursor-pointer group overflow-hidden">
+                    <CardTitle className="text-lg font-bold bg-gradient-to-br from-green-500 to-green-600 text-white w-12 h-12 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                        {item.judul}
+                    </CardTitle>
                     <CardContent className="mt-10">
                         <div className="flex justify-end">
-                            <p className="text-green-800 text-xl md:text-2xl">
+                            <p className="text-2xl font-bold text-green-700">
                                 {item.arab}
                             </p>
                         </div>
@@ -59,7 +59,7 @@ const DoaList: FC<DoaSearchProps> = ({
                             <p className="mt-3 italic text-green-900 font-semibold">
                                 {item.latin}
                             </p>
-                            <p className="mt-2 text-green-800">
+                            <p className="mt-3 text-green-800">
                                 Artinya : &quot;{item.terjemah}&quot;
                             </p>
                         </div>

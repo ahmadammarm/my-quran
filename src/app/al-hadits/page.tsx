@@ -21,7 +21,15 @@ export default function Page() {
     }
 
     return (
-        <div className="px-5">
+        <div className="min-h-screen bg-gradient-to-b from-green-50 to-white px-5">
+            <div className="text-center pt-28 pb-6">
+                <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
+                    <span className="text-green-600">Al-Hadits</span>
+                </h1>
+                <p className="mt-3 text-gray-600 text-base md:text-lg max-w-md mx-auto">
+                    Kumpulan kitab hadits dari berbagai sumber terpercaya
+                </p>
+            </div>
             <SearchHaditsInput onSearch={(query) => setSearchQuery(query)} />
             <HaditsList
                 searchQuery={searchQuery}

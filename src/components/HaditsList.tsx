@@ -42,17 +42,20 @@ const HaditsList: React.FC<HaditsListProps> = ({
     );
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-20 px-4">
             {filteredHadits.map((item) => (
                 <div key={item.id}>
-                    <Card className="bg-green-300 dark:bg-green-900 text-green-900 dark:text-green-300">
+                    <Card className="bg-white border-2 border-green-100 hover:border-green-400 hover:shadow-xl hover:shadow-green-100 transition-all duration-300 cursor-pointer group">
                         <CardHeader>
-                            <CardDescription className="text-black dark:text-white text-xl md:text-2xl font-bold">
+                            <CardDescription className="text-gray-800 text-lg md:text-xl font-semibold">
                                 {item.name}
                             </CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <p className="text-lg italic font-mono font-semibold">{item.available} hadits</p>
+                            <div className="flex items-center gap-2 text-green-600 font-medium">
+                                <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                                <p className="text-sm">{item.available} hadits</p>
+                            </div>
                         </CardContent>
                     </Card>
                 </div>
