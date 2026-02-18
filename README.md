@@ -221,10 +221,6 @@ This project is private and not open for public distribution.
 - [Open API My.id](https://github.com/renomureza/api-my-id) for the Daily Prayers API
 - [Asmaul Husna API](https://github.com/renomureza/asmaul-husna-api) for the 99 Names of Allah data
 
-## Author
-
-Created by [Ammar](https://ahmadammar.vercel.app)
-
 ---
 
 If you find this project useful, please consider giving it a star!
