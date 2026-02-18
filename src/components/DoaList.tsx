@@ -46,7 +46,7 @@ const DoaList: FC<DoaSearchProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 mt-10">
             {filteredDoa.map((item, index) => (
                 <Card key={index} className="bg-white border-2 border-green-100 hover:border-green-400 hover:shadow-xl hover:shadow-green-100 transition-all duration-300 cursor-pointer group overflow-hidden">
-                    <CardTitle className="text-lg font-bold bg-gradient-to-br from-green-500 to-green-600 text-white w-12 h-12 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                    <CardTitle className="text-lg font-bold text-green-700">
                         {item.judul}
                     </CardTitle>
                     <CardContent className="mt-10">
